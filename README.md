@@ -1,6 +1,10 @@
-![beavernet](./beaverNet.POS.WebApp/wwwroot/png/beaverNetLogo.png)
-### beaverNet - Point Of Sales
+![beavernet](beaverNet.POS.WebApp/wwwroot/png/beaverNetLogo.png)
+
 ![.NET Core](https://github.com/JulioMelchorPinto/beaverNet.POS/workflows/.NET%20Core/badge.svg)
+
+### beaverNet - Point Of Sales
+
+
 
 An ASP.NET Core 3.1 Point of Sales
 
