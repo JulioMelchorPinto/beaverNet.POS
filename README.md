@@ -9,9 +9,9 @@ An ASP.NET Core 3.1 Point of Sales
 
 ## Pre-requisites
 
-1. [.Net core 3.1 SDK](https://www.microsoft.com/net/core#windows)
-2. [Microsoft SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-2017)
-3. [MVC Dashboard Identity] (https://marketplace.visualstudio.com/items?itemName=CodeTuner.MvcDashboards)
+- [.Net core 3.1 SDK](https://www.microsoft.com/net/core#windows)
+- [Microsoft SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-2017)
+- [MVC Dashboard Identity](https://marketplace.visualstudio.com/items?itemName=CodeTuner.MvcDashboards)
 
 ## Installation
 
@@ -28,7 +28,7 @@ An ASP.NET Core 3.1 Point of Sales
     dotnet restore beaverNet.POS.sln
 ```
 4. Run .Net project:
-    F5 from either [Visual Studio IDE](https://www.visualstudio.com/) OR [VScode] (https://code.visualstudio.com/):
+    F5 from either [Visual Studio IDE](https://www.visualstudio.com/) OR [VScode](https://code.visualstudio.com/):
     Note: If you are running using Visual Studio Code, install dev certificates using command:
     ```
     dotnet dev-certs https --trust
