@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Http;
+using beaverNet.POS.WebApp.Services.POS;
 
 namespace beaverNet.POS.WebApp
 {
@@ -40,6 +41,7 @@ namespace beaverNet.POS.WebApp
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddTransient<IRepository, Repository>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

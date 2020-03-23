@@ -12,5 +12,15 @@ namespace beaverNet.POS.WebApp.Data
             : base(options)
         {
         }
+        public DbSet<beaverNet.POS.WebApp.Models.POS.Customer> Customer { get; set; }
+        public DbSet<beaverNet.POS.WebApp.Models.POS.Vendor> Vendor { get; set; }
+        public DbSet<beaverNet.POS.WebApp.Models.POS.Product> Product { get; set; }
+        public DbSet<beaverNet.POS.WebApp.Models.POS.PurchaseOrder> PurchaseOrder { get; set; }
+        public DbSet<beaverNet.POS.WebApp.Models.POS.SalesOrder> SalesOrder { get; set; }
+        public DbSet<beaverNet.POS.WebApp.Models.POS.GoodsReceive> GoodsReceive { get; set; }
+        public DbSet<beaverNet.POS.WebApp.Models.POS.InvenTran> InvenTran { get; set; }
+        public DbSet<beaverNet.POS.WebApp.Models.POS.PurchaseOrderLine> PurchaseOrderLine { get; set; }
+        public DbSet<beaverNet.POS.WebApp.Models.POS.SalesOrderLine> SalesOrderLine { get; set; }
+        public DbSet<beaverNet.POS.WebApp.Models.POS.GoodsReceiveLine> GoodsReceiveLine { get; set; }
     }
 }

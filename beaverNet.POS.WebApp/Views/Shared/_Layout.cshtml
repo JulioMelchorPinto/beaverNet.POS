@@ -6,7 +6,15 @@
     <title>@ViewData["Title"] - Point Of Sales</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    
+    <!--datatables.net-->
+    <link rel="stylesheet" href="~/lib/DataTables/datatables.min.css" />
+    <!--datatables.net-->
+    <!--jquery numpad-->
+    <link rel="stylesheet" href="~/lib/jquerey-numpad/jquery.numpad.css" />
+    <!--jquery numpad-->
+    <!--toastr-->
+    <link rel="stylesheet" href="~/lib/toastr/toastr.min.css" />
+    <!--toastr-->
 </head>
 <body>
     <header>
@@ -21,10 +29,28 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Index">Customer</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Vendor" asp-action="Index">Vendor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Product</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="PurchaseOrder" asp-action="Index">PO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="GoodsReceive" asp-action="Index">GR</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="SalesOrder" asp-action="Index">SO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="SalesOrder" asp-action="POS">Point Of Sales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="InvenTran" asp-action="Index">InvenTrans</a>
                         </li>
                     </ul>
                 </div>
@@ -32,8 +58,8 @@
         </nav>
     </header>
     <div class="container">
+        <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
-            <partial name="_CookieConsentPartial" />
             @RenderBody()
         </main>
     </div>
@@ -50,6 +76,18 @@
     <script src="https://cdn.jsdelivr.net/gh/codetuner/sircl/dist/sircl-1.1.3/sircl-full.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/codetuner/sircl/dist/sircl-1.1.3/sircl-bootstrap4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/codetuner/sircl/dist/sircl-1.1.3/sircl-fa.min.js"></script>
+    <!--datatables.net-->
+    <script src="~/lib/DataTables/datatables.min.js"></script>
+    <!--datatables.net-->
+    <!--axios-->
+    <script src="~/lib/axios/axios.min.js"></script>
+    <!--axios-->
+    <!--jquery numpad-->
+    <script src="~/lib/jquerey-numpad/jquery.numpad.js"></script>
+    <!--jquery numpad-->
+    <!--toastr-->
+    <script src="~/lib/toastr/toastr.min.js"></script>
+    <!--toastr-->
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
