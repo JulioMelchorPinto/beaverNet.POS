@@ -1,6 +1,6 @@
 ![AspNetCore-Runtime Code Sync](https://github.com/dotnet/aspnetcore/workflows/AspNetCore-Runtime%20Code%20Sync/badge.svg)
 ![.NET Core](https://github.com/JulioMelchorPinto/beaverNet.POS/workflows/.NET%20Core/badge.svg)
-![beavernet](beaverNet.POS.WebApp/wwwroot/png/beaverNetLogo.png){ width=50% }
+![beavernet](beaverNet.POS.WebApp/wwwroot/png/beaverNetLogo.png)
 
 ### beaverNet - Point Of Sales
 
