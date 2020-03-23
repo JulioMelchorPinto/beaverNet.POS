@@ -5,8 +5,9 @@
 <form inline-target="#body-content" history="set" onchange-submit=":form" onsubmit-show=".overlay" id="form">
 
     <div class="">
-        <a class="btn btn-primary" href="@Url.Action("Update")" inline-target="#body-content" inline-cached="true" history="push">New</a>
-        <div class="float-right form-inline mb-3">
+        @*<a class="btn btn-primary" href="@Url.Action("Update")" inline-target="#body-content" inline-cached="true" history="push">New</a>*@
+       <a class="btn btn-primary" asp-area="Identity" asp-page="/Account/Register" asp-route-returnUrl="@Url.Action("Update", "Users", new { area = "MVCDashboardIdentity" })" inline-target="#body-content" inline-cached="true" history="push">New</a>
+           <div class="float-right form-inline mb-3">
             <div class="input-group">
                 <input type="text" name="q" class="form-control" placeholder="Search..." value="@Model.DataPage.Filter">
                 <div class="input-group-append">
