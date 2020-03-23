@@ -1,4 +1,5 @@
-# beaverNet.POS
+### beaverNet - Point Of Sales
+
 An ASP.NET Core 3.1 Point of Sales
 
 ## Features
@@ -10,7 +11,7 @@ An ASP.NET Core 3.1 Point of Sales
 
 1. [.Net core 3.1 SDK](https://www.microsoft.com/net/core#windows)
 2. [Microsoft SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-2017)
-3. [MVCDashboardIdentity] ()
+3. [MVC Dashboard Identity] (https://marketplace.visualstudio.com/items?itemName=CodeTuner.MvcDashboards)
 
 ## Installation
 
@@ -33,4 +34,4 @@ An ASP.NET Core 3.1 Point of Sales
     dotnet dev-certs https --trust
     ```
 
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](paypal.me/beaverNet)]
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/beaverNet)]
