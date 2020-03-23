@@ -1,0 +1,118 @@
+﻿@using System.Net
+@model beaverNet.POS.WebApp.Areas.MvcDashboardIdentity.Models.ViewComponents.MvcDashboardIdentityPagerModel
+@{
+    //var p = Math.Max(Model.DataPage.FirstPage, Model.DataPage.CurrentPage - 5);
+    //var pend = Math.Min(Model.DataPage.LastPage, p + 10);
+    var pageSizes = new int[] { 3, 5, 10, 25, 50, 100, 250, 500 };
+    var preNumCount = 3;
+    var totalNumCount = preNumCount + 1 + preNumCount;
+}
+@{
+    Func<int, object> pageItemTemplate = @<li class="page-item @((item == Model.DataPage.CurrentPage) ? "active" : "")">
+        <label class="page-link">
+            <input type="radio" name="p" value="@(item)" />@(item)
+        </label>
+    </li>;
+}
+
+
+<div class="float-right text-nowrap">
+    <div class="mb-3 form-inline">
+        <select name="ps" class="form-control">
+            @if (!pageSizes.Contains(Model.DataPage.PageSize))
+            {
+                <option value="@(Model.DataPage.PageSize)" selected="selected">@(Model.DataPage.PageSize)</option>
+            }
+            @foreach (var pageSize in pageSizes)
+            {
+                <option value="@pageSize" selected="@(Model.DataPage.PageSize == pageSize ? "selected" : null)">@pageSize</option>
+            }
+        </select>
+        <a href="location:reload" history="set" class="btn btn-light ml-2"><i class="fa fa-sync-alt"></i></a>
+        @*<a href="@Url.Action("DownloadList")" class="btn btn-light ml-2"><i class="fas fa-download"></i></a>*@
+        <button type="submit" formaction="DownloadList" class="btn btn-light ml-2"><i class="fas fa-download"></i></button>
+    </div>
+</div>
+
+<nav>
+    <ul class="pagination">
+        @if (Model.DataPage.CurrentPage == Model.DataPage.FirstPage)
+        {
+            <li class="page-item disabled">
+                <label class="page-link">&laquo;</label>
+            </li>
+        }
+        else
+        {
+            <li class="page-item">
+                <label class="page-link">
+                    <input type="radio" name="p" value="@(Model.DataPage.CurrentPage - 1)" />
+                    <span>&laquo;</span>
+                </label>
+            </li>
+        }
+        @if (Model.DataPage.PageCount <= totalNumCount)
+        {
+            for (int p = Model.DataPage.FirstPage; p <= Model.DataPage.LastPage; p++)
+            {
+                @pageItemTemplate(p)
+            }
+        }
+        else
+        {
+            var prefixcount = 0;
+            var postfixcount = 0;
+            var middlestart = Model.DataPage.FirstPage;
+            var middlecount = totalNumCount;
+            if ((Model.DataPage.CurrentPage - Model.DataPage.FirstPage) > preNumCount)
+            {
+                prefixcount = 2;
+                middlecount -= 2;
+                middlestart = Model.DataPage.CurrentPage - preNumCount + prefixcount;
+            }
+            if ((middlestart + middlecount) > Model.DataPage.LastPage)
+            {
+                middlestart = Model.DataPage.LastPage - middlecount + 1;
+            }
+            else if ((middlestart + middlecount) < Model.DataPage.LastPage)
+            {
+                postfixcount = 2;
+                middlecount -= 2;
+            }
+            if (prefixcount > 0)
+            {
+                @pageItemTemplate(1);
+                <li class="page-item">
+                    <label class="page-link"><input type="radio" name="p" value="@( Model.DataPage.FirstPage + (middlestart - Model.DataPage.FirstPage) / 2)" />...</label>
+                </li>
+            }
+            for (int p = 0; p < middlecount; p++)
+            {
+                @pageItemTemplate(middlestart + p);
+            }
+            if (postfixcount > 0)
+            {
+                <li class="page-item">
+                    <label class="page-link"><input type="radio" name="p" value="@( middlestart + middlecount + (Model.DataPage.LastPage - middlestart - middlecount) / 2)" />...</label>
+                </li>
+                @pageItemTemplate(Model.DataPage.LastPage);
+            }
+        }
+        @if (Model.DataPage.CurrentPage >= Model.DataPage.LastPage)
+        {
+            <li class="page-item disabled">
+                <label class="page-link">&raquo;</label>
+            </li>
+        }
+        else
+        {
+            <li class="page-item">
+                <label class="page-link">
+                    <input type="radio" name="p" value="@(Model.DataPage.CurrentPage + 1)" />
+                    <span>&raquo;</span>
+                </label>
+            </li>
+        }
+    </ul>
+</nav>
+

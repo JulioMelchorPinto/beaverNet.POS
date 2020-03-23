@@ -1,0 +1,29 @@
+﻿@model beaverNet.POS.WebApp.Areas.MvcDashboardIdentity.Models.Roles.UpdateModel
+<form action="@Url.Action("UpdateDialog")" method="post" onsubmit-disable=":submit" default-submit-button=".default" default-cancel-button=".cancel" inline-target="local">
+    <div class="modal-header">
+        <h5 class="modal-title">Role</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+        <input type="hidden" asp-for="ReturnUrl" />
+        <input type="hidden" asp-for="Item.Id" />
+        <input type="hidden" asp-for="Item.ConcurrencyStamp" />
+
+        <div asp-validation-summary="All" class="@((this.ViewContext.ModelState.ErrorCount == 0) ? "hidden" : "alert alert-warning")">Please fix following errors:</div>
+
+        <div class="form-group">
+            <label asp-for="Item.Name"></label>
+            <input asp-for="Item.Name" class="form-control" autocomplete="off" autofocus />
+            <span asp-validation-for="Item.Name"></span>
+        </div>
+
+    </div>
+    <div class="modal-footer justify-content-start">
+        <button type="submit" class="btn btn-primary default"><i class="spinner fas fa-save"></i> Save changes</button>
+        <a class="btn btn-danger" disabled="@(Model.Item == null ? "disabled" : null)" href="@Url.Action("DeleteRequest", new { id = Model.Item?.Id })" inline-target="local"><i class="spinner fas fa-trash-alt"></i> Delete</a>
+        <button type="button" class="btn btn-link cancel ml-auto" data-dismiss="modal">Close</button>
+    </div>
+</form>

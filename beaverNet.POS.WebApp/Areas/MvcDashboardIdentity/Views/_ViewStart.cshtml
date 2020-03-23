@@ -1,0 +1,8 @@
+﻿@if (this.Context.Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+{
+    Layout = "_PartLayout";
+}
+else
+{
+    Layout = "_PageLayout";
+}

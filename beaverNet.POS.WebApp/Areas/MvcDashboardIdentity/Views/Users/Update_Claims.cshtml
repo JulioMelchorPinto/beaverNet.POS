@@ -1,0 +1,27 @@
+﻿@model beaverNet.POS.WebApp.Areas.MvcDashboardIdentity.Models.Users.UpdateModel
+
+<div id="claimspart">
+
+    <fieldset class="@(Model.SupportsUserClaims ? "" : "hidden")">
+        <legend>Claims</legend>
+        @for (int i = 0; i < Model.UserClaims.Count; i++)
+        {
+            <div class="form-group">
+                <button type="submit" asp-action="RemoveClaim" asp-route-claimIndex="@i" inline-target="#claimspart" class="btn btn-link float-right">&times;</button>
+                <label>@(Model.UserClaims[i].ClaimType)</label>
+                <input type="hidden" asp-for="UserClaims[i].Id" />
+                <input type="hidden" asp-for="UserClaims[i].ClaimType" />
+                <input asp-for="UserClaims[i].ClaimValue" class="form-control" autocomplete="off" />
+            </div>
+            <hr />
+        }
+        <button type="submit" class="btn btn-secondary btn-sm" inline-target="#add-claim-dlg .modal-content" asp-action="AddClaimDlgBody"><i class="fas fa-plus"></i> Add</button>
+    </fieldset>
+
+    <div id="add-claim-dlg" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content"></div>
+        </div>
+    </div>
+
+</div>

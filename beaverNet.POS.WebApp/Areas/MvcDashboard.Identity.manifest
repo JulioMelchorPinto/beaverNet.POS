@@ -1,0 +1,5 @@
+﻿{
+  "Name": "Identity",
+  "AreaName": "MvcDashboardIdentity",
+  "Icon": "<i class=\"fas fa-users-cog\"></i>"
+}

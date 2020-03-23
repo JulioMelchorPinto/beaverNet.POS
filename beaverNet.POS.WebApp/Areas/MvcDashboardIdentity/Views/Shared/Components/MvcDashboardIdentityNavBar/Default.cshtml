@@ -1,0 +1,15 @@
+﻿@model beaverNet.POS.WebApp.Areas.MvcDashboardIdentity.Models.ViewComponents.MvcDashboardIdentityNavBarModel
+
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" asp-area="MvcDashboardIdentity" asp-controller="Home" asp-action="Index"><i class="fas fa-users-cog"></i>&nbsp;MvcDashboardIdentity</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link @((string)ViewContext.RouteData.Values["Controller"] == "Users" ? "active" : null)" asp-area="MvcDashboardIdentity" asp-controller="Users" asp-action="Index"><i class="fas fa-user"></i> Users <span class="badge badge-pill badge-primary">@Model.UserCount</span></a>
+            <a class="nav-item nav-link @((string)ViewContext.RouteData.Values["Controller"] == "Roles" ? "active" : null)" asp-area="MvcDashboardIdentity" asp-controller="Roles" asp-action="Index"><i class="fas fa-theater-masks"></i> Roles <span class="badge badge-pill badge-primary">@Model.RoleCount</span></a>
+        </div>
+    </div>
+    <i class="fas fa-spinner fa-spin load-in-progress-show pull-right"></i>
+</nav>

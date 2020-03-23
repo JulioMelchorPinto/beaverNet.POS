@@ -1,0 +1,98 @@
+﻿@model beaverNet.POS.WebApp.Areas.MvcDashboardIdentity.Models.Users.UpdateModel
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h2>Update</h2>
+
+<form method="post" onsubmit-disable=":submit" onsubmit-show=".overlay" style="position: relative;" default-submit-button=".default" default-cancel-button=".cancel" onchange-set="IsDirty">
+    <input type="hidden" asp-for="ReturnUrl" />
+    <input type="hidden" asp-for="Item.Id" />
+    <input type="hidden" asp-for="Item.ConcurrencyStamp" />
+    <input type="hidden" asp-for="IsDirty" />
+
+    <div asp-validation-summary="All" class="@((this.ViewContext.ModelState.ErrorCount == 0) ? "hidden" : "alert alert-warning")">Please fix following errors:</div>
+
+    <div class="row">
+
+        <div class="col-md">
+            <fieldset>
+                <legend>Contact</legend>
+                <div class="form-group">
+                    <label asp-for="Item.UserName"></label>
+                    <input asp-for="Item.UserName" class="form-control" autocomplete="off" autofocus required pattern="[0-9|A-Z|a-z|@@|.]+" />
+                    <span asp-validation-for="Item.UserName"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Item.Email"></label>
+                    <input asp-for="Item.Email" class="form-control" autocomplete="off" ifhasvalue-enable="#@Html.IdFor(m => m.Item.EmailConfirmed)" />
+                </div>
+
+                <div class="form-group form-check">
+                    <input asp-for="Item.EmailConfirmed" type="checkbox" class="form-check-input">
+                    <label asp-for="Item.EmailConfirmed" class="form-check-label"></label>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Item.PhoneNumber"></label>
+                    <input asp-for="Item.PhoneNumber" class="form-control" autocomplete="off" ifhasvalue-enable="#@Html.IdFor(m => m.Item.PhoneNumberConfirmed)" />
+                </div>
+
+                <div class="form-group form-check">
+                    <input asp-for="Item.PhoneNumberConfirmed" type="checkbox" class="form-check-input">
+                    <label asp-for="Item.PhoneNumberConfirmed" class="form-check-label"></label>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Security</legend>
+                <div class="form-group form-check">
+                    <input asp-for="Item.TwoFactorEnabled" type="checkbox" class="form-check-input">
+                    <label asp-for="Item.TwoFactorEnabled" class="form-check-label"></label>
+                </div>
+
+                <div class="form-group form-check">
+                    <input asp-for="Item.LockoutEnabled" type="checkbox" class="form-check-input" ifchecked-show="#lockoutend-group">
+                    <label asp-for="Item.LockoutEnabled" class="form-check-label"></label>
+                </div>
+
+                <div class="form-group" id="lockoutend-group">
+                    <label asp-for="Item.LockoutEnd"></label>
+                    <input asp-for="Item.LockoutEnd" class="form-control" type="datetime" />
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="col-md">
+            <fieldset class="@(Model.SupportsUserRoles ? "" : "hidden")">
+                <legend>Roles</legend>
+                @foreach (var item in Model.Roles.OrderBy(r => r.Name))
+                {
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="@(Html.IdFor(m=> m.UserRoleNames))_@(item.Id)" name="@Html.NameFor(m => m.UserRoleNames)" value="@(item.Name)" checked="@(Model.UserRoleNames.Contains(item.Name) ? "checked" : null)">
+                        <label class="form-check-label" for="@(Html.IdFor(m=> m.UserRoleNames))_@(item.Id)">@item.Name</label>
+                    </div>
+                }
+            </fieldset>
+
+            <partial name="Update_Claims" model="Model" />
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md">
+            <button type="submit" asp-action="Save" class="btn btn-primary default"><i class="spinner fas fa-save"></i> Save</button>
+            <button type="submit" asp-action="Delete" class="btn btn-danger" disabled="@(Model.Item == null ? "disabled" : null)" confirm-message="Are you sure ?"]"><i class="spinner fas fa-user-times"></i> Delete</button>
+
+            <a class="btn btn-default cancel back" href="@Model.ReturnUrl">Back</a>
+
+        </div>
+    </div>
+
+    <div class="hidden overlay"></div>
+
+</form>

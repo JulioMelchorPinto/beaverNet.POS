@@ -1,0 +1,82 @@
+﻿<html>
+<head>
+<title>Arebis MvcDashboardIdentity ReadMe</title>
+    <style>
+        html {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        pre {
+            padding: 12px;
+            border-radius: 4px;
+            background-color: lavenderblush;
+            overflow: auto;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+        .old-code {
+            background-color: lightgray;
+        }
+        .new-code {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<h1>Arebis MvcDashboardIdentity</h1>
+
+<h2>Introduction</h2>
+
+<p>
+Arebis MvcDashboardIdentity is an ASP.NET Core dashboard area allowing to manage
+ASP.NET Core Identities such as creating or deleting users and groups, manage group
+membership, etc.
+</p>
+
+<h2>Setup</h2>
+
+<p>After installing the dashboard area, follow these steps:</p>
+
+<h3>Add support for role-based identity</h3>
+
+<p>To support role-based identity, add the following line of code to the indentiy service configuration:</p>
+<pre>
+services.AddDefaultIdentity&lt;IdentityUser&gt;(options => options.SignIn.RequireConfirmedAccount = true)
+    <b><span class="new-code">.AddRoles&lt;IdentityRole&gt;()</span></b>
+    .AddEntityFrameworkStores&lt;ApplicationDbContext&gt;();
+</pre>
+
+<h3>Add routing for the MvcDashboardIdentity area</h3>
+
+<p>
+Configure the following route declaration in the Startup class of your project:
+</p>
+
+<pre>
+app.UseEndpoints(endpoints =>
+{
+    <b><span class="new-code">endpoints.MapAreaControllerRoute(null, "MvcDashboardIdentity", "MvcDashboardIdentity/{controller=Home}/{action=Index}/{id?}");</span></b>
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+    endpoints.MapRazorPages();
+});
+</pre>
+
+<h3>Secure access</h3>
+
+<p>As to not come unsercure out of the box, the area is secured to be accessible only by users in the "Administrator" role.</p>
+
+<p>Edit the <code>Areas\MvcDashboardIdentity\Controllers\BaseController.cs</code> file, and set whatever role you want to secure the Identity dashboard with:</p>
+
+<pre>
+[Area("MvcDashboardIdentity")]
+<b>[Authorize(Roles = "<span class="highlight">Administrator</span>")]</b>
+public abstract class BaseController : Controller
+{
+    ...
+</pre>
+
+<p>You may want to put the <code>[Authorize]</code> attribute in comments to run a first time and assign your user the required role. Don't forget to uncomment afterwards.</p>
+
+<hr/>

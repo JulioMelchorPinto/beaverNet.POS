@@ -1,0 +1,45 @@
+﻿@model beaverNet.POS.WebApp.Areas.MvcDashboardIdentity.Models.Roles.IndexModel
+
+<h2>Roles</h2>
+
+<form inline-target="#body-content" history="set" onchange-submit=":form" onsubmit-show=".overlay">
+
+    <div class="">
+        <a class="btn btn-primary" href="@Url.Action("UpdateDialog")" inline-target="#modal-lg-content">New</a>
+        <div class="float-right form-inline mb-3">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search..." value="@Model.DataPage.Filter">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <a href="?" history="set" class="btn btn-light ml-2"><i class="fa fa-times"></i></a>
+        </div>
+    </div>
+
+    <div style="position: relative">
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.DataPage.Items)
+                {
+                    <tr href="@Url.Action("UpdateDialog", new { id = item.Id })" inline-target="#modal-lg-content">
+                        <th scope="row"></th>
+                        <td>@item.Name</td>
+                        <td></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="hidden overlay"></div>
+    </div>
+
+    <vc:mvc-dashboard-identity-pager page="@Model.DataPage" />
+
+</form>

@@ -1,0 +1,28 @@
+﻿@model beaverNet.POS.WebApp.Areas.MvcDashboardIdentity.Models.Users.UpdateModel
+
+<div class="modal-header">
+    <h5 class="modal-title">Add claim</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="form-group">
+        <label asp-for="NewClaim.ClaimType"></label>
+        <input asp-for="NewClaim.ClaimType" class="form-control" autocomplete="on" list="claimtypeslist" autofocus />
+    </div>
+    <div class="form-group">
+        <label asp-for="NewClaim.ClaimValue"></label>
+        <input asp-for="NewClaim.ClaimValue" class="form-control" autocomplete="off" />
+    </div>
+    <datalist id="claimtypeslist">
+        @foreach (var ct in Model.ClaimTypes)
+        {
+            <option>@ct</option>
+        }
+    </datalist>
+</div>
+<div class="modal-footer justify-content-start">
+    <button type="submit" asp-action="AddClaim" class="btn btn-primary default" inline-target="#claimspart" data-dismiss="modal"><i class="fas fa-check"></i> Add</button>
+    <button type="button" class="btn btn-link cancel ml-auto" data-dismiss="modal">Close</button>
+</div>

@@ -1,0 +1,21 @@
+﻿@model beaverNet.POS.WebApp.Areas.MvcDashboardIdentity.Models.Roles.DeleteRequestModel
+<form action="@Url.Action("Delete")" method="post" onsubmit-disable=":submit" default-submit-button=".default" default-cancel-button=".cancel" inline-target="local">
+    <div class="modal-header">
+        <h5 class="modal-title">Role</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+        <input type="hidden" asp-for="Item.Id" />
+        <input type="hidden" asp-for="Item.ConcurrencyStamp" />
+
+        <p>Delete role @(Model.Item.Name) ?</p>
+
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-danger" disabled="@(Model.Item == null ? "disabled" : null)" asp-action="Delete"><i class="spinner fas fa-trash-alt"></i> Delete</button>
+        <button type="button" class="btn btn-secondary cancel" data-dismiss="modal">Cancel</button>
+    </div>
+</form>
