@@ -14,16 +14,23 @@ An ASP.NET Core 3.1 Point of Sales
 
 ## Installation
 
+1. Clone the repo
 ```
-1. Clone the repo:
     git clone https://github.com/JulioMelchorPinto/beaverNet.POS
+```
 2. Change directory:
+```
     cd beaverNet.POS
+```
 3. Restore packages:
+```
     dotnet restore beaverNet.POS.sln
+```
 4. Run .Net project:
     F5 from either [Visual Studio IDE](https://www.visualstudio.com/) OR [VScode] (https://code.visualstudio.com/):
     Note: If you are running using Visual Studio Code, install dev certificates using command:
+    ```
     dotnet dev-certs https --trust
-    
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)]
+    ```
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](paypal.me/beaverNet)]
