@@ -1,4 +1,4 @@
-![beavernet](beaverNet.POS.WebApp/wwwroot/png/beaverNetLogo.png)
+![beavernet](beaverNet.POS.WebApp/wwwroot/png/beaverNetLogo.png#thumbnail)
 
 ![.NET Core](https://github.com/JulioMelchorPinto/beaverNet.POS/workflows/.NET%20Core/badge.svg)
 
