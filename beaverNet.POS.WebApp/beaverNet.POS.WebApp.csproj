@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <UserSecretsId>aspnet-beaverNet.POS.WebApp-828AC7DD-BF64-4984-BB88-D4A86E32269D</UserSecretsId>
+    <UserSecretsId>beaverNet.POS.WebApp-828AC7DD-BF64-4984-BB88-D4A86E32269D</UserSecretsId>
   </PropertyGroup>
 
 
