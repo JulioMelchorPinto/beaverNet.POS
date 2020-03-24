@@ -1,0 +1,20 @@
+# This is a basic workflow to help you get started with Actions
+
+name: ASP.NET Core CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1
+    
+    - name: Build Backend
+      run: ./build.sh --settings_skipverification=true

@@ -1,4 +1,10 @@
-### beaverNet - Point Of Sales
+![AspNetCore-Runtime Code Sync](https://github.com/dotnet/aspnetcore/workflows/AspNetCore-Runtime%20Code%20Sync/badge.svg)
+![.NET Core](https://github.com/JulioMelchorPinto/beaverNet.POS/workflows/.NET%20Core/badge.svg)
+
+# beaverNet - Point Of Sales ![beavernet](beaverNet.POS.WebApp/wwwroot/favicon.ico)
+
+
+
 
 An ASP.NET Core 3.1 Point of Sales
 
