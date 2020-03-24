@@ -1,7 +1,8 @@
 ![AspNetCore-Runtime Code Sync](https://github.com/dotnet/aspnetcore/workflows/AspNetCore-Runtime%20Code%20Sync/badge.svg)
 ![.NET Core](https://github.com/JulioMelchorPinto/beaverNet.POS/workflows/.NET%20Core/badge.svg)
 
-# beaverNet - Point Of Sales ![beavernet](beaverNet.POS.WebApp/wwwroot/favicon.ico)
+#  ![beavernet](beaverNet.POS.WebApp/wwwroot/png/beaverNetLogo39px.png) beaverNet
+# Point Of Sales
 
 
 
