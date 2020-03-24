@@ -1,12 +1,12 @@
 ![AspNetCore-Runtime Code Sync](https://github.com/dotnet/aspnetcore/workflows/AspNetCore-Runtime%20Code%20Sync/badge.svg)
 ![.NET Core](https://github.com/JulioMelchorPinto/beaverNet.POS/workflows/.NET%20Core/badge.svg)
 
-# beaverNet - Point Of Sales ![beavernet](beaverNet.POS.WebApp/wwwroot/favicon.ico)
+# beaverNet Point Of Sales ![beavernet](beaverNet.POS.WebApp/wwwroot/favicon.ico)
 
 
-
-
-An ASP.NET Core 3.1 Point of Sales
+This is an implementation of a minimal Point of Sales in Microsoft ASP.NET Core 3.1,
+based on MVC architectural pattern using code first aproach with Entity Framework on
+local machine using Microsoft SQL Database 
 
 ## Features
 
