@@ -5,6 +5,10 @@
     <UserSecretsId>beaverNet.POS.WebApp-828AC7DD-BF64-4984-BB88-D4A86E32269D</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="Areas\MvcDashboardIdentity\Views\_ViewImports.cshtml" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.2" />

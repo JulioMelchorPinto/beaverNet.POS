@@ -13,6 +13,7 @@ namespace beaverNet.POS.WebApp.Models.POS
         public string Name { get; set; }
         public string Description { get; set; }
         public string Phone { get; set; }
+        [EmailAddress]
         public string Email { get; set; }
         public string Address { get; set; }
         public string Address2 { get; set; }

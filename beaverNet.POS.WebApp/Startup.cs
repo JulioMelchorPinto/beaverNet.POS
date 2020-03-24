@@ -35,9 +35,19 @@ namespace beaverNet.POS.WebApp
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            services.AddDbContext<ApplicationDbContext>(options =>
+            //if (env.IsDevelopment())
+            //{
+            //    services.AddDbContext<ApplicationDbContext>(options =>
+            //      options.UseSqlServer(
+            //           Configuration.GetConnectionString("DefaultConnection")));
+            //}
+            //else
+            //{
+                services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("freeaspconnection")));
+           //// }
+            
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -72,8 +82,8 @@ namespace beaverNet.POS.WebApp
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapAreaControllerRoute(
-                    name: null, 
-                    areaName: "MvcDashboardIdentity", 
+                    name: null,
+                    areaName: "MvcDashboardIdentity",
                     pattern: "MvcDashboardIdentity/{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute(
                     name: "default",

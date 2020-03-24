@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Point Of Sales</title>
+    <title>Point Of Sales</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <!--datatables.net-->
@@ -15,6 +15,7 @@
     <!--toastr-->
     <link rel="stylesheet" href="~/lib/toastr/toastr.min.css" />
     <!--toastr-->
+    @RenderSection("Styles", required: false)
 </head>
 <body>
     <header>
@@ -28,29 +29,35 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Index">Customer</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Catalogs
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Customer" asp-action="Index">Customer</a>
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Vendor" asp-action="Index">Vendor</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="Products" asp-action="Index">Products</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Vendor" asp-action="Index">Vendor</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Orders
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="PurchaseOrder" asp-action="Index">Customer</a>
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="GoodsReceive" asp-action="Index">Vendor</a>
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="SalesOrder" asp-action="Index">Sales</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Product</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="PurchaseOrder" asp-action="Index">PO</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="GoodsReceive" asp-action="Index">GR</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="SalesOrder" asp-action="Index">SO</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="SalesOrder" asp-action="POS">Point Of Sales</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="InvenTran" asp-action="Index">InvenTrans</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Management
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="SalesOrder" asp-action="POS">Point Of Sales</a>
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="InvenTran" asp-action="Index">InvenTrans</a>
+                            </div>
                         </li>
                     </ul>
                 </div>

@@ -53,12 +53,14 @@
     @RenderSection("Scripts", required: false)
 </head>
 <body>
-
-    <div class="container-fluid">
-        <div class="navbar-expand-sm">
-            <vc:mvc-dashboard-identity-nav-bar />
-        </div>
-
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <vc:mvc-dashboard-identity-nav-bar />
+            </div>
+        </nav>
+    </header>
+    <div class="container">
         <div id="body-content">
             @RenderBody()
         </div>
