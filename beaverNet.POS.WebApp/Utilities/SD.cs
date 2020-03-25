@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace beaverNet.POS.WebApp.Utility
+namespace beaverNet.POS.WebApp.Utilities
 {
     public static class SD
     {

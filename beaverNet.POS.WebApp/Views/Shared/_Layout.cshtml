@@ -5,23 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Point Of Sales</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!--datatables.net-->
     <link rel="stylesheet" href="~/lib/DataTables/datatables.min.css" />
-    <!--datatables.net-->
     <!--jquery numpad-->
     <link rel="stylesheet" href="~/lib/jquerey-numpad/jquery.numpad.css" />
-    <!--jquery numpad-->
     <!--toastr-->
     <link rel="stylesheet" href="~/lib/toastr/toastr.min.css" />
-    <!--toastr-->
+    <link rel="stylesheet" href="~/css/site.css" />
     @RenderSection("Styles", required: false)
 </head>
-<body>
+<body class="search-background">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/png/beaverNetLogo.png" alt="beaverNet" height="40" /> beaverNet</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/beaverNetLogo.png" height=40 />beaverNet</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -45,9 +43,9 @@
                                 Orders
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="PurchaseOrder" asp-action="Index">Customer</a>
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="PurchaseOrder" asp-action="Index">Purchase Order</a>
                                 <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="GoodsReceive" asp-action="Index">Vendor</a>
-                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="SalesOrder" asp-action="Index">Sales</a>
+                                <a class="nav-link text-dark dropdown-item" asp-area="" asp-controller="SalesOrder" asp-action="Index">Sales Order</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
