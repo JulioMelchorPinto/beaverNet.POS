@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Http;
 using beaverNet.POS.WebApp.Services.POS;
+using beaverNet.POS.WebApp.Email;
 
 namespace beaverNet.POS.WebApp
 {
@@ -45,13 +46,26 @@ namespace beaverNet.POS.WebApp
             //{
                 services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("freeaspconnection")));
+                    Configuration.GetConnectionString("DefaultConnection")));
            //// }
             
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddTransient<IRepository, Repository>();
+
+            //services.AddAuthentication().AddFacebook(fb =>
+            //{
+            //    fb.AppId = "1460046297460691";
+            //    fb.AppSecret = "d62e7f2852fc5d7b12f8518721222f5b";
+            //});
+
+            //services.AddAuthentication().AddGoogle(go =>
+            //{
+            //    go.ClientId = "688106088890-pov7l0qi48ep9nhb4idiihhig97mc97a.apps.googleusercontent.com";
+            //    go.ClientSecret = "AZGG3CIboE3UAxf1AgdjX9pF";
+            //});
+            services.Configure<EmailOptions>(Configuration);
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
