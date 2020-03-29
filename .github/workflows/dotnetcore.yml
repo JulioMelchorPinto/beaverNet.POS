@@ -14,8 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v3.1
       with:
-        dotnet-version: 3.1.101
+        dotnet-version: 3.1.0
     - name: Build with dotnet
       run: dotnet build --configuration Release
