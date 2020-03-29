@@ -12,13 +12,13 @@ contact_links:
   uses: actions/setup-dotnet@v3.1.2
   with:
     # SDK version to use. Example: 2.2.104
-    dotnet-version: # optional
+    dotnet-version: 3.1.2 # optional
     # Optional package source for which to set up authentication. Will consult any existing NuGet.config in the root of the repo and provide a temporary NuGet.config using the NUGET_AUTH_TOKEN environment variable as a ClearTextPassword
-    source-url: # optional
+    source-url: Microsoft.AspNetCore.Identity # optional
     # Optional OWNER for using packages from GitHub Package Registry organizations/users other than the current repository's owner. Only used if a GPR URL is also provided in source-url
     owner: # optional
     # Optional NuGet.config location, if your NuGet.config isn't located in the root of the repo.
-    config-file: # optional
+    config-file: nuget.config # optional
     # Deprecated. Use dotnet-version instead. Will not be supported after October 1, 2019
     version: # optional
 social media:
