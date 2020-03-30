@@ -92,15 +92,26 @@
     <!--jquery numpad-->
     <!--toastr-->
     <script src="~/lib/toastr/toastr.min.js"></script>
-    <!--toastr-->
-     <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/7.13.1/firebase-app.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>   
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBdn3acAIyqkEuUYMTttG7pdvvbWJ-nUbU",
+    authDomain: "linux-vm-212755.firebaseapp.com",
+    databaseURL: "https://linux-vm-212755.firebaseio.com",
+    projectId: "linux-vm-212755",
+    storageBucket: "linux-vm-212755.appspot.com",
+    messagingSenderId: "641614118925",
+    appId: "1:641614118925:web:11183895f8b698debf5544"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+        </script> 
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
