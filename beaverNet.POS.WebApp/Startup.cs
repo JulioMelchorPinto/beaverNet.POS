@@ -65,6 +65,12 @@ namespace beaverNet.POS.WebApp
             //    go.ClientId = "688106088890-pov7l0qi48ep9nhb4idiihhig97mc97a.apps.googleusercontent.com";
             //    go.ClientSecret = "AZGG3CIboE3UAxf1AgdjX9pF";
             //});
+           // services.AddAuthentication().AddGithub( gt =>
+            //  {
+          //        gt.ClientId = "428f22bee79c351e2c1a";
+           //       gt.ClientSecret = "a755fb0d4a0c0e1950bddd442dd867de08819535";
+        //      }
+
             services.Configure<EmailOptions>(Configuration);
             services.AddControllersWithViews();
             services.AddRazorPages();
