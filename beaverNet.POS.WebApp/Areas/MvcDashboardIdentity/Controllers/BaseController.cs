@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace beaverNet.POS.WebApp.Areas.MvcDashboardIdentity.Controllers
 {
     [Area("MvcDashboardIdentity")]
-    [Authorize(Roles = "Administrator")]
+    //[Authorize(Roles = "Administrator")]
     //[Authorize]
     public abstract class BaseController : Controller
     {

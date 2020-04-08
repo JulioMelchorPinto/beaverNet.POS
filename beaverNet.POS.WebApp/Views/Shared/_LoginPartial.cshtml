@@ -12,12 +12,14 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="nav-link text-dark dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Profile</a>
-                @if (User.IsInRole("Administrator"))
-                {
+               @*  
+               @if (User.IsInRole("Administrator"))
+                {  
+                    *@
                     <a class="nav-link text-dark" asp-area="MVCDashboardIdentity" asp-controller="Home" asp-action="Index">
                         <i class="fas fa-users-cog"></i>User management
                     </a>
-                }
+                @* } *@
             </div>
         </li>
         <li class="nav-item">
