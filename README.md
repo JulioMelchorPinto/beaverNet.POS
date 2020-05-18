@@ -3,11 +3,13 @@
 ![.NET Core](https://github.com/JulioMelchorPinto/beaverNet.POS/workflows/.NET%20Core/badge.svg)
 
 # Point Of Sales
-#  ![beavernet](beaverNet.POS.WebApp/wwwroot/img/beaverNetLogo39px.png) beaverNet
+#  ![beavernet](beaverNet.POS.WebApp/wwwroot/img/beaverNetLogo40px.png) beaverNet
 
 This is an implementation of a minimal Point of Sales in Microsoft ASP.NET Core 3.1,
 based on MVC architectural pattern using code first aproach with Entity Framework on
-local machine using Microsoft SQL Database.
+local machine using Microsoft SQLite Database.
+
+<img src="beaverNet.POS.WebApp/wwwroot/img/screenshot-pos01.png" width="500">
 
 ## Features
 
