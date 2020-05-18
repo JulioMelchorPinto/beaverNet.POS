@@ -9,7 +9,7 @@ This is an implementation of a minimal Point of Sales in Microsoft ASP.NET Core 
 based on MVC architectural pattern using code first aproach with Entity Framework on
 local machine using Microsoft SQLite Database.
 
-<img src="beaverNet.POS.WebApp/wwwroot/img/screenshot-pos01.png" width="500">
+<img src="beaverNet.POS.WebApp/wwwroot/img/screenshot-pos01.png" width="900">
 
 ## Features
 
